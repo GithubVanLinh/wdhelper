@@ -70,7 +70,7 @@ export async function generateModuleFromConfig() {
           controller({
             authDecorator: authDecorator,
             name: controllerName,
-            controllerPath: controllerName.toLowerCase(),
+            controllerPath: name.toLowerCase(),
             serviceName: serviceName,
             serviceInstanceName: serviceInstanceName,
             dto: {

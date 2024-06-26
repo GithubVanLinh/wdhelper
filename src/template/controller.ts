@@ -23,7 +23,7 @@ export default ({
     ? `@${authDecorator}() ${authDecorator.toLowerCase()}: string`
     : "";
   return `
-import { Controller } from "@nestjs/common";
+import { Controller, Post, Get, Patch, Delete, Body, Param, Query } from "@nestjs/common";
 import { ${serviceName} } from "./service";
 import { ${createDto} } from "./dto/create";
 import { ${findDto} } from "./dto/find";

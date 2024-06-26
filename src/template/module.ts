@@ -16,7 +16,7 @@ export default ({
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { ${modelName}, ${modelSchema}} from "./model.ts"
+import { ${modelName}, ${modelSchema}} from "./model"
 import { ${controllerName} } from "./controller"
 import { ${serviceName} } from "./service"
 

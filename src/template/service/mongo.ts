@@ -33,7 +33,7 @@ export class ${name} {
   ) {}
 
   async create(body: ${createDto}, opt?: SessionOption){
-    const newDoc = await this.${modelInstanceName}(body).save(opt);
+    const newDoc = await new this.${modelInstanceName}(body).save(opt);
     return newDoc;
   }
 
