@@ -1,0 +1,79 @@
+{
+  "name": "wd-nest-helpers",
+  "displayName": "nest-helpers",
+  "description": "",
+  "version": "0.0.2",
+  "publisher": "wd-nestjs-helpers",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "WD",
+      "properties": {
+        "wd.moduleFolder": {
+          "type": "string",
+          "default": "/src/module",
+          "description": "Target folder when generate"
+        },
+        "wd.targetDatabase": {
+          "description": "target database you want generate",
+          "type": "string",
+          "enum": [
+            "mongodb",
+            "mysql2",
+            "prisma"
+          ],
+          "enumDescriptions": [
+            "for mongoose",
+            "for mysql: not available",
+            "for prisma: not available"
+          ],
+          "default": "mongodb"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "wd-nest-helpers.generate",
+        "title": "WD: Generate"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets.json"
+      }
+    ],
+    "jsonValidation": [
+      {
+        "fileMatch": "wdConfig.json",
+        "url": "./json_schema.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^7.11.0",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}

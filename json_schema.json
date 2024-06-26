@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/product.schema.json",
+  "title": "WD Config",
+  "description": "Config of WD",
+  "type": "object",
+  "properties": {
+    "auth": {
+      "description": "auth information",
+      "type": "object",
+      "properties": {
+        "authDecorator": {
+          "type": "string"
+        }
+      }
+    },
+    "module": {
+      "description": "module",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "enum": ["number", "string", "object", "enum"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

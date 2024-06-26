@@ -1,0 +1,38 @@
+{
+  "Get controller method": {
+    "scope": "typescript, javascript",
+    "prefix": "cget",
+    "body": ["@Get('$1')", "async $2() {", "\t$0", "}"]
+  },
+  "Post method": {
+    "scope": "typescript, javascript",
+    "prefix": "cpost",
+    "body": ["@Post('$1')", "async $2(@Body() private $3) {", "\t$0", "}"]
+  },
+  "Post media method": {
+    "scope": "typescript, javascript",
+    "prefix": "cpost",
+    "body": [
+      "@FileInterceptor()",
+      "@Post('$1')",
+      "async $2(@File() file: Multer.type.File ,@Body() private $3) {",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Put method": {
+    "scope": "typescript, javascript",
+    "prefix": "cput",
+    "body": ["@Get('$1')", "async $2(@Body() private $3) {", "\t$0", "}"]
+  },
+  "Delete method": {
+    "scope": "typescript, javascript",
+    "prefix": "cdel",
+    "body": ["@Get('$1')", "async $2($3) {", "\t$0", "}"]
+  },
+  "Patch method": {
+    "scope": "typescript, javascript",
+    "prefix": "cpatch",
+    "body": ["@Get('$1')", "async $2(@Body() private $3) {", "\t$0", "}"]
+  }
+}
